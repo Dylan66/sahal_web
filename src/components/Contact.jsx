@@ -73,23 +73,33 @@ const Contact = () => {
   };
   
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Contact Us</h2>
+          <div className="inline-block px-4 py-1 bg-blue-100 text-brand-blue rounded-full mb-4 font-medium text-sm">
+            Get In Touch
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <span className="text-brand-blue">Contact</span> <span className="text-brand-green">Us</span>
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Have questions or need more information? Reach out to our team at Sahal Healthcare.
           </p>
         </div>
         
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="flex flex-col lg:flex-row bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
             <div className="lg:w-1/2 p-8">
-              <h3 className="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+              <h3 className="text-2xl font-bold text-brand-blue mb-6 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+                Send Us a Message
+              </h3>
               
               {isSubmitted ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-green-100 text-brand-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
@@ -98,7 +108,7 @@ const Contact = () => {
                   <p className="text-gray-600">Thank you for reaching out. We'll get back to you as soon as possible.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="bg-white rounded-lg">
                   <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="name">
                       Name*
@@ -109,7 +119,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="Your name"
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -125,7 +135,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="your.email@example.com"
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -141,7 +151,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows="5"
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="Your message here..."
                     ></textarea>
                     {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
@@ -150,7 +160,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-70"
+                    className="w-full bg-brand-blue text-white py-3 px-4 rounded-lg hover:bg-brand-dark-blue transition duration-300 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-50 disabled:opacity-70 font-medium shadow-md"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
@@ -166,17 +176,23 @@ const Contact = () => {
               )}
             </div>
             
-            <div className="lg:w-1/2 bg-blue-50">
-              <div className="h-64 lg:h-full">
+            <div className="lg:w-1/2 bg-gradient-to-br from-brand-light-blue to-brand-blue relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full transform -translate-x-10 -translate-y-10"></div>
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-brand-green opacity-10 rounded-full transform translate-x-10 translate-y-10"></div>
+              
+              <div className="h-64 lg:h-full relative z-10 flex items-center justify-center">
                 {/* Map placeholder */}
-                <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-gray-500 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <p className="text-gray-600">Map will be embedded here</p>
-                    <p className="mt-2 font-medium">123 Medical Plaza, Nairobi</p>
+                <div className="w-full h-full bg-white bg-opacity-10 flex items-center justify-center p-8">
+                  <div className="text-center p-4 bg-white bg-opacity-90 rounded-lg shadow-lg max-w-md mx-auto">
+                    <div className="w-16 h-16 bg-brand-blue bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">Our Location</h3>
+                    <p className="text-gray-600 mb-4">Visit us at our modern facility equipped with the latest healthcare technology.</p>
+                    <p className="text-brand-blue font-medium text-lg">123 Medical Plaza, Nairobi</p>
                   </div>
                 </div>
               </div>
@@ -184,35 +200,35 @@ const Contact = () => {
           </div>
           
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-md text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100 group hover:border-brand-blue">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-brand-blue group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-blue-900 mb-2">Phone</h3>
+              <h3 className="text-lg font-semibold text-brand-blue mb-2">Phone</h3>
               <p className="text-gray-600">+123 456 7890</p>
               <p className="text-gray-600">+123 456 7891</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100 group hover:border-brand-green">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-green transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-brand-green group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-blue-900 mb-2">Email</h3>
+              <h3 className="text-lg font-semibold text-brand-green mb-2">Email</h3>
               <p className="text-gray-600">info@sahalhealthcare.com</p>
               <p className="text-gray-600">appointments@sahalhealthcare.com</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300 border border-gray-100 group hover:border-brand-orange">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-orange transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-brand-orange group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-blue-900 mb-2">Working Hours</h3>
+              <h3 className="text-lg font-semibold text-brand-orange mb-2">Working Hours</h3>
               <p className="text-gray-600">Monday - Friday: 8am - 6pm</p>
               <p className="text-gray-600">Saturday: 9am - 1pm</p>
               <p className="text-gray-600">Sunday: Closed</p>
