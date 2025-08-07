@@ -1,12 +1,48 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Sahal Website
 
-Currently, two official plugins are available:
+This is the website template for a modern service mdeical provider named Sahal offering a range of solutions to help clients book, connect, and discover their offerings online. Built with React and Vite, the site is designed for speed, responsiveness, and ease of use.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Modern UI:** Clean, responsive design using React and Tailwind CSS
+- **Service Booking:** Users can browse and book services directly from the website
+- **Contact & Support:** Easy-to-use contact form for inquiries
+- **Fast Performance:** Powered by Vite for lightning-fast development and production builds
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+4. **Preview the production build:**
+   ```bash
+   npm run preview
+   ```
+
+## Project Structure
+
+- `src/components/` – React components for different sections (Navbar, Hero, Services, Booking, Contact, Footer)
+- `public/` – Static assets and icons
+- `index.html` – Main HTML entry point
+- `tailwind.config.js` – Tailwind CSS configuration
+
+## Technologies Used
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ESLint](https://eslint.org/)
+
+## License
+
+This project is licensed under the MIT License.
