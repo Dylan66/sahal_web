@@ -16,13 +16,34 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+ 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Dark mode toggle
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return document.documentElement.classList.contains('dark');
+    }
+    return false;
+  });
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const newMode = !prev;
+      if (newMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('darkMode', newMode);
+      return newMode;
+    });
+  };
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white dark:bg-[#23272f] shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <img src="/logo.jpeg" alt="Sahal Healthcare Logo" className="h-12 w-auto mr-3 rounded-md shadow-sm" />
@@ -31,6 +52,14 @@ const Navbar = () => {
             <span className="text-xl font-bold text-brand-green"> Healthcare</span>
           </div>
         </div>
+        {/* Dark mode toggle button */}
+        <button
+          onClick={toggleDarkMode}
+          className="ml-4 px-3 py-2 rounded-md border border-brand-blue dark:border-brand-green bg-white dark:bg-[#23272f] text-brand-blue dark:text-brand-green transition-colors duration-300 shadow-sm"
+          aria-label="Toggle dark mode"
+        >
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
         
         <div className="hidden md:flex space-x-6">
           <a href="#home" className="text-brand-blue hover:text-brand-light-blue font-medium px-2 py-1 border-b-2 border-transparent hover:border-brand-blue transition-all duration-300">Home</a>

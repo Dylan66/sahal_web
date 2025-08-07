@@ -4,22 +4,22 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gradient-to-b from-brand-dark-blue to-blue-900 text-white py-16">
+    <footer className="bg-gradient-to-b from-brand-dark-blue to-blue-900 text-white py-16 dark:bg-[#23272f] dark:text-brand-green">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1: About */}
           <div>
             <div className="flex items-center mb-4">
               {/* Logo */}
-              <div className="h-12 w-12 bg-white rounded-full mr-3 flex items-center justify-center shadow-md">
+              <div className="h-12 w-12 bg-white dark:bg-[#23272f] rounded-full mr-3 flex items-center justify-center shadow-md">
                 <img src="/logo.jpeg" alt="Sahal Healthcare Logo" className="h-10 w-10 rounded-full object-cover" />
               </div>
               <div>
-                <span className="text-xl font-bold text-white">Sahal</span>
+                <span className="text-xl font-bold text-white dark:text-brand-green">Sahal</span>
                 <span className="text-xl font-bold text-brand-green"> Healthcare</span>
               </div>
             </div>
-            <p className="text-blue-200 mb-4 leading-relaxed">
+            <p className="text-blue-200 dark:text-gray-200 mb-4 leading-relaxed">
               Providing modern healthcare solutions for women and men with a focus on personalized care and reproductive health.
             </p>
             <div className="flex space-x-3 mt-6">
@@ -43,10 +43,10 @@ const Footer = () => {
           
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-5 text-white border-b border-blue-700 pb-2">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-5 text-white dark:text-brand-green border-b border-blue-700 pb-2">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                <a href="#home" className="text-blue-200 dark:text-brand-green hover:text-white transition duration-300 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -54,7 +54,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-blue-200 hover:text-white transition duration-300 flex items-center">
+                <a href="#services" className="text-blue-200 dark:text-brand-green hover:text-white transition duration-300 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

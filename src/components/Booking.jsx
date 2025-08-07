@@ -91,29 +91,29 @@ const Booking = () => {
   };
   
   return (
-    <section id="booking" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="booking" className="py-24 bg-gradient-to-b from-gray-50 to-white dark:bg-[#23272f] dark:bg-none">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1 bg-orange-100 text-brand-orange rounded-full mb-4 font-medium text-sm">
+          <div className="inline-block px-4 py-1 bg-orange-100 text-brand-orange rounded-full mb-4 font-medium text-sm dark:bg-[#23272f] dark:text-brand-green">
             Schedule Your Visit
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="text-brand-blue">Book an</span> <span className="text-brand-orange">Appointment</span>
+            <span className="text-brand-blue dark:text-brand-green">Book an</span> <span className="text-brand-orange">Appointment</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
             Schedule your visit with Dr. Andrew at Sahal Healthcare. We'll get back to you promptly to confirm your appointment.
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <div className="max-w-4xl mx-auto bg-white dark:bg-[#23272f] rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
           <div className="md:flex">
-            <div className="md:w-2/5 bg-gradient-to-br from-brand-blue via-brand-dark-blue to-brand-blue text-white p-8 flex flex-col justify-center relative overflow-hidden">
+            <div className="md:w-2/5 bg-gradient-to-br from-brand-blue via-brand-dark-blue to-brand-blue text-white p-8 flex flex-col justify-center relative overflow-hidden dark:bg-[#23272f]">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full transform translate-x-10 -translate-y-10"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-brand-green opacity-10 rounded-full transform -translate-x-10 translate-y-10"></div>
               
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-6 border-b border-blue-400 pb-3">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-6 border-b border-blue-400 pb-3 dark:text-brand-green">Contact Information</h3>
                 <div className="mb-8 space-y-4">
                   <p className="flex items-center">
                     <span className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3">
@@ -142,7 +142,7 @@ const Booking = () => {
                   </p>
                 </div>
                 <div className="bg-white bg-opacity-10 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-3 text-white flex items-center">
+                  <h4 className="font-semibold mb-3 text-white dark:text-brand-green flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -157,21 +157,21 @@ const Booking = () => {
             <div className="md:w-3/5 p-8">
               {isSubmitted ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 text-brand-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <div className="w-16 h-16 bg-green-100 text-brand-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-md dark:bg-brand-green dark:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Booking Successful!</h3>
-                  <p className="text-gray-600">We've received your appointment request and will contact you shortly to confirm.</p>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-brand-green mb-2">Booking Successful!</h3>
+                  <p className="text-gray-600 dark:text-gray-200">We've received your appointment request and will contact you shortly to confirm.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <h3 className="text-xl font-semibold text-brand-blue mb-6">Personal Information</h3>
+                  <h3 className="text-xl font-semibold text-brand-blue dark:text-brand-green mb-6">Personal Information</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="fullName">
+                      <label className="block text-gray-700 dark:text-gray-200 text-sm font-medium mb-1" htmlFor="fullName">
                         Full Name*
                       </label>
                       <input
@@ -187,7 +187,7 @@ const Booking = () => {
                     </div>
                     
                     <div>
-                      <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="email">
+                      <label className="block text-gray-700 dark:text-gray-200 text-sm font-medium mb-1" htmlFor="email">
                         Email*
                       </label>
                       <input
@@ -205,7 +205,7 @@ const Booking = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="phone">
+                      <label className="block text-gray-700 dark:text-gray-200 text-sm font-medium mb-1" htmlFor="phone">
                         Phone*
                       </label>
                       <input
@@ -221,7 +221,7 @@ const Booking = () => {
                     </div>
                     
                     <div>
-                      <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="service">
+                      <label className="block text-gray-700 dark:text-gray-200 text-sm font-medium mb-1" htmlFor="service">
                         Service*
                       </label>
                       <select
@@ -240,11 +240,11 @@ const Booking = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-brand-orange mt-8 mb-6">Appointment Details</h3>
+                  <h3 className="text-xl font-semibold text-brand-orange dark:text-brand-green mt-8 mb-6">Appointment Details</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="date">
+                      <label className="block text-gray-700 dark:text-gray-200 text-sm font-medium mb-1" htmlFor="date">
                         Preferred Date*
                       </label>
                       <input
@@ -260,7 +260,7 @@ const Booking = () => {
                     </div>
                     
                     <div>
-                      <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="time">
+                      <label className="block text-gray-700 dark:text-gray-200 text-sm font-medium mb-1" htmlFor="time">
                         Preferred Time*
                       </label>
                       <input
@@ -276,7 +276,7 @@ const Booking = () => {
                   </div>
                   
                   <div className="mb-6">
-                    <label className="block text-gray-700 text-sm font-medium mb-1" htmlFor="message">
+                    <label className="block text-gray-700 dark:text-gray-200 text-sm font-medium mb-1" htmlFor="message">
                       Additional Information
                     </label>
                     <textarea
@@ -293,7 +293,7 @@ const Booking = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-brand-green text-white py-3 px-4 rounded-lg hover:bg-brand-dark-green transition duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-50 disabled:opacity-70 font-medium shadow-md"
+                    className="w-full bg-brand-green text-white py-3 px-4 rounded-lg hover:bg-brand-dark-green transition duration-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-50 disabled:opacity-70 font-medium shadow-md dark:bg-brand-dark-green dark:text-white"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">

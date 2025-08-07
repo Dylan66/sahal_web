@@ -29,7 +29,7 @@ const ServiceCard = ({ title, description, icon, color }) => {
   const classes = colorClasses[color] || colorClasses.blue;
   
   return (
-    <div className={`group bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-gray-100 ${classes.hover} relative overflow-hidden`}>
+    <div className={`group bg-white dark:bg-[#23272f] p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 ${classes.hover} relative overflow-hidden`}>
       {/* Decorative corner accent */}
       <div className={`absolute top-0 right-0 w-20 h-20 transform translate-x-10 -translate-y-10 rotate-45 ${classes.bg} opacity-30`}></div>
       
@@ -39,11 +39,11 @@ const ServiceCard = ({ title, description, icon, color }) => {
             {icon}
           </div>
         </div>
-        <h3 className={`text-xl font-bold mb-4 ${classes.title}`}>{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{description}</p>
+        <h3 className={`text-xl font-bold mb-4 ${classes.title} dark:text-brand-green`}>{title}</h3>
+        <p className="text-gray-600 dark:text-gray-200 leading-relaxed">{description}</p>
         
-        <div className="mt-6 pt-6 border-t border-gray-100">
-          <a href="#booking" className={`inline-flex items-center ${classes.title} font-medium hover:underline`}>
+        <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700">
+          <a href="#booking" className={`inline-flex items-center ${classes.title} dark:text-brand-green font-medium hover:underline`}>
             Book Now
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
